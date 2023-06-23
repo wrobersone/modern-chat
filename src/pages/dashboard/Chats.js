@@ -5,6 +5,7 @@ import {styled, alpha, useTheme} from '@mui/material/styles'
 import { faker } from '@faker-js/faker';
 import { ChatList } from '../../data'
 import SimpleBarStyle from '../../components/Scrollbar'
+import { Search, SearchIconWrapper, StyledInputBase} from "../../components/Search";
 
 const StyledBadge = styled(Badge)(({ theme }) => ({
   '& .MuiBadge-badge': {
@@ -61,34 +62,6 @@ const ChatElement = ({ id, name, img, msg, time, unread, online }) => {
     </Box>
   )
 }
-
-const Search = styled("div")(({ theme }) => ({
-  position: "relative",
-  borderRadius: 20,
-  backgroundColor: alpha(theme.palette.background.default, 1),
-  marginRight: theme.spacing(2),
-  marginLeft: 0,
-  width: "100%",
-}));
-
-const SearchIconWrapper = styled("div")(({ theme }) => ({
-  position: "absolute",
-  padding: theme.spacing(0, 2),
-  height: "100%",
-  alignItems: "center",
-  display: "flex",
-  justifyContent: "center",
-  pointerEvents: "none",
-}));
-
-const StyledInputBase = styled(InputBase)(({ theme }) => ({
-  color: "inherit",
-  "&.MuiInputBase-input": {
-    padding: theme.spacing(1, 1, 1, 0),
-    paddingLeft: `calc(1em + ${theme.spacing(4)})`,
-    width: "100%",  
-  },
-}));
 
 const Chats = () => {
   const theme = useTheme();
